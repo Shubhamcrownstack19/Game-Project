@@ -14,8 +14,14 @@ h1{
     height: 165px;
     width: 165px;
     border-radius: 50%;
+    display: flex;
     align-items: center;
-    justify-self: center;
+    justify-content: center;
+}
+.choice:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    background-color: #a44006;
 }
 
 img{
