@@ -15,11 +15,11 @@ const generateComputerChoice= ()=>{
 const showWinner = (userWin) => {
     if(userWin){
         console.log("User wins!");
-        msg.innerText = "You win!";
+        msg.innerText = `You win! ${userScore} beats ${computerChoice}`;
         msg.style.backgroundColor = "green";
     } else {
         console.log("Computer wins!");
-        msg.innerText = "Computer wins!";
+        msg.innerText = `You Lose! ${computerScore} beats ${userScore}`;
         msg.style.backgroundColor = "red";
     }
 }
