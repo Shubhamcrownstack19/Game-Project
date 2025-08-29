@@ -52,15 +52,22 @@ img{
 }
 
 body {
-    background-color: #364156;
+    background-color: #CDCDCD;
 }
 
 #msg {
+    margin-top: 10rem;
     background-color: #081b31;
-    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 3rem;
     line-height: 50%;
     color: #ffffff;
     height: 5rem;
     line-height: 5rem;
+    display: inline;
 }
-
+.msg-container{
+    margin-top: 5rem;
+    cursor: pointer;
+}
