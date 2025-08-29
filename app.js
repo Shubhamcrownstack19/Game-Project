@@ -3,6 +3,8 @@ let computerScore = 0;
 
 const choices = document.querySelectorAll(".choice");  // Get all choice elements
 const msg = document.querySelector(".msg");
+const userScorePara = document.querySelector("#user-score");
+const computerScorePara = document.querySelector("#computer-score");
 
 // Generate Computer choice
 const generateComputerChoice= ()=>{
@@ -12,12 +14,16 @@ const generateComputerChoice= ()=>{
 
 };
 
-const showWinner = (userWin) => {
+const showWinner = (userWin,userChoice,computerChoice) => {
     if(userWin){
+        userScore++;
+        userScorePara.innerText = userScore;
         console.log("User wins!");
         msg.innerText = `You win! ${userScore} beats ${computerChoice}`;
         msg.style.backgroundColor = "green";
     } else {
+        computerScore++;
+        computerScorePara.innerText = computerScore;
         console.log("Computer wins!");
         msg.innerText = `You Lose! ${computerScore} beats ${userScore}`;
         msg.style.backgroundColor = "red";
