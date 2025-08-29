@@ -51,4 +51,16 @@ img{
     font-size: 4rem;
 }
 
+body {
+    background-color: #364156;
+}
+
+#msg {
+    background-color: #081b31;
+    font-size: 2rem;
+    line-height: 50%;
+    color: #ffffff;
+    height: 5rem;
+    line-height: 5rem;
+}
 
