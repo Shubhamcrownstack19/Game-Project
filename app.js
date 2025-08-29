@@ -2,7 +2,7 @@ let userScore = 0;
 let computerScore = 0;
 
 const choices = document.querySelectorAll(".choice");  // Get all choice elements
-const msg = document.querySelector(".msg");
+const msg = document.querySelector("#msg");
 const userScorePara = document.querySelector("#user-score");
 const computerScorePara = document.querySelector("#computer-score");
 
@@ -19,13 +19,13 @@ const showWinner = (userWin,userChoice,computerChoice) => {
         userScore++;
         userScorePara.innerText = userScore;
         console.log("User wins!");
-        msg.innerText = `You win! ${userScore} beats ${computerChoice}`;
+        msg.innerText = `You win! ${userChoice} beats ${computerChoice}`;
         msg.style.backgroundColor = "green";
     } else {
         computerScore++;
         computerScorePara.innerText = computerScore;
         console.log("Computer wins!");
-        msg.innerText = `You Lose! ${computerScore} beats ${userScore}`;
+        msg.innerText = `You Lose! ${computerChoice} beats ${userChoice}`;
         msg.style.backgroundColor = "red";
     }
 }
@@ -58,14 +58,16 @@ const playGame = (userChoice) =>{
             // rock, paper
             userWin = computerChoice === "rock" ? false : true;
         }     
-        showWinner(userWin);   
+        showWinner(userWin, userChoice, computerChoice);   
 }    
 };
 
 choices.forEach((choice) =>{
     console.log(choice);
     choice.addEventListener("click", () => {
-        const userChoice = choice.getAttribute("id");
+        //const userChoice = choice.getAttribute("id");
+        const userChoice = choice.querySelector("img")?.id?.toLowerCase();
+        if (!userChoice) return; // safety guard
         console.log("Choice was clicked ",userChoice);
         playGame(userChoice);
     });
